@@ -1,0 +1,71 @@
+{
+    "name": "dotcms-language-services",
+    "displayName": "DotCMS Language Services",
+    "description": "DotCMS translation validator and helper for Angular templates",
+    "version": "0.0.1",
+    "publisher": "dotcms",
+    "icon": "images/dot-logo.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dotcms/dotcms-language-services"
+    },
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Linters",
+        "Other"
+    ],
+    "keywords": [
+        "dotcms",
+        "translations",
+        "i18n",
+        "angular",
+        "validation"
+    ],
+    "activationEvents": [
+        "onLanguage:html"
+    ],
+    "main": "./src/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "html",
+                "extensions": [
+                    ".html"
+                ],
+                "aliases": [
+                    "HTML",
+                    "htm",
+                    "html"
+                ]
+            }
+        ],
+        "configuration": {
+            "title": "DotCMS Translations",
+            "properties": {
+                "dotcmsTranslations.propertiesPath": {
+                    "type": "string",
+                    "default": "dotCMS/src/main/webapp/WEB-INF/messages/Language.properties",
+                    "description": "Path to Language.properties file (relative to workspace root)"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "dotcms-language-services.reloadTranslations",
+                "title": "Reload DM Translations"
+            }
+        ]
+    },
+    "scripts": {
+        "package": "vsce package",
+        "publish": "vsce publish"
+    },
+    "devDependencies": {
+        "@types/node": "^22.9.0",
+        "@types/vscode": "^1.60.0",
+        "vsce": "^2.15.0"
+    }
+}
