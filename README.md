@@ -16,6 +16,16 @@ DotCMS Language Services is a VS Code extension that enhances the development ex
 - 💡 Hover support showing translation values
 - 🛠️ Configurable translation file path
 
+## Pre-Instalation
+1. Go to `.vscode` folder
+2. Create a file called `settings.json``
+3. Paste this as content
+```json
+{
+  "dotcmsTranslations.propertiesPath": "dotCMS/src/main/webapp/WEB-INF/messages/Language.properties"
+}
+```
+
 ## Installation
 
 1. Download the `.vsix` file from the latest release
